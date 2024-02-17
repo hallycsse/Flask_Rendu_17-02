@@ -15,7 +15,7 @@ def initdb():
 
   resaC1 = Reservation(id_client = 1,id_chambre = 1,date_arrivee = "2024-02-16 13:00:00",date_depart = "2024-02-20 13:00:00")
 
-  db.session.add_all(chambre101)
+  db.session.add(chambre101)
   db.session.add(chambre102)
   db.session.add(client1)
   db.session.add(client2)
