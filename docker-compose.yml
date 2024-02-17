@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    volumes:
+      - ./src/hotel:/app/src/hotel
+    ports:
+      - "5001:5000"
+  db:
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hotel
+    volumes:
+      - mysql_data:/var/lib/mysql
+    # docker run -e -v
+
+volumes:
+  mysql_data:
